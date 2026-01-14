@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QnA</title>
+
+  <link rel="stylesheet" href="QnA.css" />
+</head>
+<body>
+  <div id="headerWrap">
+    <div id="header">
+      <!-- //head inner -->
+      <div class="headInner">
+        <!-- ✅ 클래스명 통일 -->
+        <h1 class="jkLogo">
+          <!-- //search -->
+          <a href="https://www.jobkorea.co.kr/">
+            <img src="https://file2.jobkorea.co.kr/Net/Mng/Image/LogoImage?FN=2025/09/JK-PC-%EC%B5%9C%EC%A2%85%EC%88%98%EC%A0%95_1_3.gif" alt="JOBKOREA">
+          </a>
+        </h1>
+
+        <div class="search" id="searchWrap">
+          <h2 class="skip">검색</h2>
+          <form name="global_seek">
+            <fieldset>
+              <legend>Smart Match 통합검색</legend>
+              <div class="smKey">
+                <input type="text" id="stext" name="stext" placeholder="검색어를 입력하세요" maxlength="30" />
+                
+                <div id="AKCDiv" class="autoSearch">
+                </div>
+
+                <input type="submit" value="검색" class="submit" />
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <!-- search// -->
+         <!-- //배너 영역 -->
+        <div class="headBann">
+            <strong class="skip">잡코리아 주요 서비스</strong>
+            <div class="bannBxAlignRow">
+                <a href="https://www.albamon.com/" target="_blank" class="bann-logo bann-albamon" onclick="">알바몬</a>
+                <a href="https://www.gamejob.co.kr/" target="_blank" class="bann-logo bann-gamejob" onclick="">게임잡</a>
+                <a href="https://www.ninehire.com/" target="_blank" class="bann-logo bann-ninehire" onclick="">나인하이어</a>
+                <a href="https://www.klik.co.kr/?utm_source=jk_pc&utm_medium=banner&utm_campaign=fam_site/" target="_blank" class="bann-logo bann-klik">클릭
+                  <div class="bann-log__tooltip">외국인 인재 채용 지금 바로!</div>
+                </a>
+            </div>
+        </div>
+      </div>
+      <!-- headinner// -->
+      <div id="headNavBar" class="headNavBar dev-headNavBar">
+        <div class="navInner dev-navInner">
+          <div class="jkNavArea dev-jkNavArea">
+            <h2 class="skip">주요서비스</h2>
+            <ul class="serviceNav dev-serviceNav">
+              <li id="gnbGi" class="navitem">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">채용정보</span>
+                  </span>
+                </a>
+              </li>
+              <li id="onepick" class="navItem onepick">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">합격축하금</span>
+                  </span>
+                </a>
+              </li>
+              <li id="gnbStart" class="navItem start">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">공채정보</span>
+                  </span>
+                </a>
+              </li>
+              <li id="gnbInternship" class="navItem internship">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">신입·인턴</span>
+                  </span>
+                </a>
+              </li>
+              <li id="gnbSalary" class="navItem salary">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">기업·연봉</span>
+                  </span>
+                </a>
+              </li>
+              <li id="futurelab" class="navItem futurelab">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">취업전략</span>
+                  </span>
+                </a>
+              </li>
+              <li id="gnbQna" class="navItem qna gnbQna-fixed">
+                <a href="" class="linkItem" onclick="">
+                  <span class="spNav">
+                    <span class="txIr">취업톡톡</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <!-- my 홈일경우 클래스 myPage -->
+            <ul id="devMyPage" class="userNav">
+              <ul class="userNav">
+                <li class="userNav-item login">
+                  <a href="" class="txt-button login-button"></a>
+                </li>
+                <li></li>
+                <li></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
