@@ -86,6 +86,10 @@ address, caption, em {
     margin: 0 auto;
     background: #f2f4f7;
 }
+.inner {
+    width: 1260px;
+    margin: 0 auto;
+}
 
 /* 알림 (공고, 공지사항) */
     /* 공지사항 배너 */
