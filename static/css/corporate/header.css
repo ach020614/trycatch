@@ -77,7 +77,7 @@ address, caption, em {
 /* 헤더 */
 .corporate-header {
     position: relative;
-    background: #323743;
+    background: #434041;
 }
 .corporate-header>.inner {
     padding-top: 21px;
@@ -136,7 +136,6 @@ address, caption, em {
 }
 .corporate-header .navigation .left-menu-list>li>a {
     font-size: 18px;
-    /* letter-spacing: 0; */
     color: #fff;
     font-weight: 700;
     padding-left: 20px;
@@ -150,14 +149,15 @@ address, caption, em {
     display: inline-block;
     width: 22px;
     height: 16px;
-    background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/icon_menu.png") no-repeat 50%;
+    background: url("/static/images/corporate/icon_menu.png") no-repeat 50%;
 }
 .corporate-header .navigation .left-menu-list>li .button-all-menu.active i {
-    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 33'%3E%3Cg%3E%3Cg%3E%3Cpolygon fill='%23fff' stroke='%23fff' stroke-width='2' points='32.7,1.7 31.3,0.3 16.5,15.1 1.7,0.3 0.3,1.7 15.1,16.5 0.3,31.3 1.7,32.7 16.5,17.9 31.3,32.7 32.7,31.3 17.9,16.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background: url("/static/images/corporate/icon_menu_close.svg");
     background-repeat: no-repeat;
 }
 /* javascript: click 했을 때, active 클래스 추가 */
 
+    /* nav 상세(미니 모달) */
 .corporate-header .sub-nav {
     display: none;
     position: absolute;
@@ -178,20 +178,20 @@ address, caption, em {
     padding-left: 16px;
     line-height: 36px;
     font-size: 14px;
-    /* letter-spacing: 0; */
 }
-.corporate-header .navigation .left-menu-list>li .bubble, .corporate-header .navigation .left-menu-list>li .bubble:before {
+
+    /* 잡코리아 인재 추천 메세지 css */
+/* .corporate-header .navigation .left-menu-list>li .bubble, .corporate-header .navigation .left-menu-list>li .bubble:before {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
 }
 .corporate-header .navigation .left-menu-list>li .bubble {
-    /* display: inline-block; */
+    display: inline-block;
     top: -11px;
     height: 20px;
     line-height: 20px;
     font-size: 12px;
-    /* letter-spacing: 0; */
     text-align: center;
     white-space: nowrap;
     color: #fff;
@@ -199,14 +199,15 @@ address, caption, em {
     font-weight: 600;
     border-radius: 22px;
     background-color: #297fff;
-    /* box-sizing: border-box; */
 }
 .corporate-header .navigation .left-menu-list>li .bubble:before {
     content: "";
     border: 8px solid rgba(0, 0, 0, 0);
     border-top-color: #297fff;
     bottom: -13px;
-}
+} */
+
+    /* 기업 이름 */
 .corporate-header .navigation .right-menu {
     float: right;
 }
@@ -217,26 +218,177 @@ address, caption, em {
 }
 .corporate-header .navigation .right-menu-list>li>a {
     font-size: 16px;
-    /* letter-spacing: 0; */
     color: #fff;
     padding-left: 14px;
     padding-right: 14px;
 }
-.corporate-header .sale-badge {
+.corporate-header .navigation .right-menu.logged-in .notification .bell {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}
+.corporate-header .navigation .right-menu.logged-in .notification .bell:before {
+    position: absolute;
+    top: 15px;
+    left: 4px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    content: "";
+    background-color: #fff;
+    mask-image: url("/static/images/corporate/icon_bell.svg");
+    /* mask-size: contain; */
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.corporate-header .navigation .right-menu.logged-in .notification .bell:before {
+    animation: wobble 1.15s ease-in;
+}
+
+        /* 기업 알림 */
+.notification .notification-menu {
+    display: none;
+    position: absolute;
+    top: 51px;
+    left: -218px;
+    z-index: 335;
+    width: 338px;
+    max-height: 556px;
+}
+.notification .notification-menu.active {
+    display: block;
+    padding-top: 4px;
+    padding-right: 4px;
+    border: 1px solid #6a6a6a;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.notification .notification-menu .notification-menu-body{
+    overflow-y: auto;
+    width: 100%;
+    height: 516px;
+    border-bottom: 0;
+    border-radius: 8px;
+    background-color: #fff;
+    scrollbar-width: thin;
+}
+            /* 알림 없을 때 */
+.notification .notification-menu .notification-menu-body .no-notification.active {
+    display: block;
+}
+.notification .notification-menu .notification-menu-body .no-notification {
+    display: none;
+    overflow: hidden;
+    padding: 6px 6px 10px 10px;
+    width: 100%;
+    height: 100%;
+}
+.notification .notification-menu .no-notification .no-notification-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #d9dfea;
+    text-align: center;
+    height: 100%;
+}
+.notification .notification-menu .no-notification .notification-setting-button {
+    display: block;
+    width: 148px;
+    height: 34px;
+    margin: 0 auto;
+    padding-top: 9px;
+    border: 1px solid #39f;
+    border-radius: 17px;
+    font-weight: 700;
+    color: #39f !important;
+    text-decoration: none;
+    font-size: 13px;
+}
+.no-notification-header {
+    /* margin-bottom: 8px; */
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    font-size: 16px;
+}
+.no-notification-description {
+    line-height: 18px;
+}
+            /* 알림 있을 때 */
+.notification .notification-menu .notification-menu-body .notification-list.active {
+    display: block;
+}
+.notification .notification-menu .notification-menu-body .notification-list {
+    display: none;
+    overflow: hidden;
+    padding: 6px 6px 10px 10px;
+    width: 100%;
+}
+.notification .notification-menu .notification-menu-body .notification-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 15px; */
+    /* border: 1px solid #d9dfea; */
+    text-align: center;
+    height: 100%;
+}
+.notification-list ul li {
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    border-bottom: 1px solid #d9dfea;
+}
+.notification-list ul li:last-child {
+    border-bottom: 0;
+}
+.notification-list ul li .sender {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.notification-list ul li .sender span:first-child {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    line-height: 20px;
+    color: #000;
+    font-size: 16px;
+    padding-bottom: 1px;
+}
+.notification-list ul li .sender span:first-child::before {
+    content: "From.";
+    display: inline-block;
+    padding-right: 5px;
+}
+.notification-list ul li .sender span.new-badge {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ff4f4f;
     border-radius: 2px;
-    /* padding-top: 0; */
+    padding-top: 0;
     color: #fff;
     font-size: 10px;
-    /* letter-spacing: 0; */
     width: 30px;
     height: 16px;
     margin-bottom: 1px;
 }
+.notification-list ul li .preview {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
 
+/* sub-menu(모달) */
 .corporate-header .all-menu-modal, .corporate-header .sub-nav-bg {
     display: none;
     position: absolute;
@@ -247,17 +399,11 @@ address, caption, em {
     padding-top: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .0784313725);
 }
-
-.corporate-header .all-menu-modal, .corporate-header .sub-nav-bg {
-    /* display: none; */
-    position: absolute;
-    left: 0;
-    top: 136px;
-    width: 100%;
-    background: #fff;
-    padding-top: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .0784313725);
+.corporate-header .all-menu-modal.active {
+    display: block;
 }
+/* javascript: click시 active 클래스 추가 */
+
 /* .corporate-header .sub-nav-bg {
     display: none;
     min-height: 235px;
@@ -265,11 +411,14 @@ address, caption, em {
 } */
  .corporate-header .all-menu-modal {
     padding-bottom: 30px;
-    min-height: 352px;
+    /* min-height: 352px; */
     z-index: 333;
 }
 .corporate-header .all-menu-modal .inner {
     position: relative;
+
+    height: 230px;
+    width: 894px;
 }
 .corporate-header .all-menu-modal .category {
     float: left;
@@ -281,7 +430,6 @@ address, caption, em {
 }
 .corporate-header .all-menu-modal .category .title a {
     font-size: 15px;
-    /* letter-spacing: 0; */
     color: #1a1a1a;
     font-weight: 700;
 }
@@ -302,7 +450,6 @@ address, caption, em {
 }
 .corporate-header .all-menu-modal .category>ul>li>ul>li>a {
     font-size: 12px;
-    /* letter-spacing: 0; */
     line-height: 26px;
 }
 .corporate-header .all-menu-modal .category>ul>li>ul>li>a:before {
@@ -333,15 +480,15 @@ address, caption, em {
     vertical-align: sub;
     width: 19px;
     height: 23px;
-    background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/icon_add.png");
+    background: url("/static/images/corporate/icon_add.png");
     background-size: 19px auto;
     margin-right: 9px;
 }
-
-/* javascript: 마우스 올렸을 때, active 클래스 추가 */
 .corporate-header .navigation .left-menu-list>li.active .sub-nav, .corporate-header .navigation .right-menu-list>li.active .sub-nav {
     display: block;
 }
+/* javascript: 마우스 올렸을 때, active 클래스 추가 */
+
 .corporate-header .navigation .left-menu-list>li+.active-fixed>a:after, .corporate-header .navigation .left-menu-list>li+.active>a:after {
     position: absolute;
     margin: 0 auto;
@@ -353,3 +500,122 @@ address, caption, em {
     background: #b8ff00;
 }
 /*  */
+
+/* 모달 - 알림창 */
+.common-modal.active {
+    display: block;
+}
+.common-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20000 !important;
+    width: 100%;
+    height: 100%;
+}
+.common-modal .modal-dimmed {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+.common-modal.notification-modal .modal-contents {
+    height: 700px;
+    width: 500px;
+}
+.common-modal .modal-contents {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    background: #fff;
+    padding: 30px 35px;
+}
+.common-modal .close-button {
+    position: absolute;
+    z-index: 10;
+    right: 35px;
+    top: 30px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: url("/static/images/corporate/icon_close.png") no-repeat 50%;
+}
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.swiper-wrapper{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    /* overflow: hidden; */
+    /* box-sizing: content-box; */
+}
+.common-modal.notification-modal .modal-contents .swiper-wrapper .swiper-slide {
+    height: 640px;
+    width: 430px;
+    flex-shrink: 0;
+}
+.common-modal.notification-modal .modal-contents .swiper-wrapper .swiper-slide .header h2 {
+    font-size: 24px;
+    letter-spacing: -.5px;
+    color: #1a1a1a;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+.common-modal.notification-modal .modal-contents .swiper-wrapper .swiper-slide .header h2::before {
+    content: "From.";
+    display: inline-block;
+    padding-right: 5px;
+}
+.common-modal.notification-modal .modal-contents .swiper-wrapper .swiper-slide .header .date {
+    color: #666;
+    font-size: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+.common-modal.notification-modal .modal-contents .swiper-wrapper .swiper-slide .content {
+    overflow-y: auto;
+    width: 100%;
+    height: 553px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    word-break: keep-all;
+}
+.common-modal.notification-modal .swiper-button-next, .common-modal.notification-modal .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 47px;
+    height: 125px;
+    background: url("/static/images/corporate/arrow_modal_swiper.png");
+    margin-top: -62.5px;
+    z-index: 10;
+    cursor: pointer;
+}
+.common-modal.notification-modal .swiper-button-next {
+    right: -77px;
+}
+.common-modal.notification-modal .swiper-button-prev {
+    left: -77px;
+    transform: scaleX(-1);
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: .35;
+    cursor: auto;
+    pointer-events: none;
+}
