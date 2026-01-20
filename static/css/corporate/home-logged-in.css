@@ -457,3 +457,65 @@ fieldset, img {
 /* 기업인증배너 */
 
 /* 공고·지원자 관리 */
+.col-1-large-section {
+    float: left;
+    width: 620px;
+}
+.current-section {
+    margin-bottom: 20px;
+}
+.border-round-section {
+    border-radius: 15px;
+    background: #fff;
+}
+.current-section .current-data-wrap {
+    padding: 28px 0;
+}
+.current-data-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.current-data-wrap .current-data {
+    padding: 0 32px;
+    flex: 1 0 0%;
+}
+.current-data h5 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: #444;
+    line-height: 24px;
+}
+.current-data ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+/* .current-section .current-data-wrap .current-data .data-none {
+    font-size: 16px;
+} */
+.current-data ul li {
+    text-align: center;
+    flex: 1 0 0%;
+}
+.current-data ul li strong {
+    font-size: 40px;
+    letter-spacing: -1px;
+    color: #222;
+    line-height: 44px;
+}
+.current-data ul li.data-none span, .current-data ul li.data-none strong {
+    color: #b8b8b8;
+}
+.current-data ul li p {
+    font-size: 16px;
+    margin-top: 8px;
+    color: #6a6a6a;
+    line-height: 24px;
+    white-space: nowrap;
+}
+.current-data+.current-data {
+    border-left: 1px solid #e8e8e8;
+}
