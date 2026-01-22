@@ -61,13 +61,12 @@ table {
     border-spacing: 0;
     empty-cells: show;
 }
-/* button {
+button {
     overflow: visible;
     background: rgba(0, 0, 0, 0);
     cursor: pointer;
     vertical-align: middle;
-} */
-
+}
 a, a:link, a:visited {
     color: #666;
     text-decoration: none;
@@ -1398,11 +1397,15 @@ fieldset, img {
 .recruit-section .border-round-section {
     position: relative;
 }
+
+.data-box::-webkit-scrollbar {
+    display: none;
+}
+
 .recruit-section .data-box {
-    overflow-y: auto;
+    overflow: scroll;
     height: 100%;
     width: 100%;
-    scrollbar-width: thin;
 
     position: relative;
     z-index: 999;

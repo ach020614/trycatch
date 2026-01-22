@@ -51,7 +51,6 @@ recruitSwiperWrapper.style.transition = "transform 0.3s";
 const programDatas = document.querySelectorAll(
     ".recruit-section .data-box ul li",
 );
-const programDataBox = document.querySelector(".recruit-section .data-box");
 
 // 사이드바 고정
 const rightBanner = document.querySelector(".right-banner");
@@ -150,16 +149,18 @@ setInterval(() => {
 });
 
 // 진행 중인 프로그램
-programDatas.forEach((data) => {
+programDatas.forEach((data, i) => {
+    if (i === 0 || i === 1) {
+        data.style.marginTop = "7.5px";
+    }
+
     data.style.transition = "transform 0.3s";
 
     data.addEventListener("mouseenter", (e) => {
-        // programDataBox.style.padding = "28px 32px 36px";
         data.style.transform = "translateY(-8px)";
     });
 
     data.addEventListener("mouseleave", (e) => {
-        // programDataBox.style.padding = "36px 32px";
         data.style.transform = "translateY(0px)";
     });
 });
