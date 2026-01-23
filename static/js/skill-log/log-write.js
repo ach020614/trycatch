@@ -317,3 +317,63 @@ keywordTextBox.addEventListener("input", (e) => {
         keywordSearch.classList.remove("focus");
     }
 });
+
+// 삭제 이벤트 - 한 번만 등록 (이벤트 위임)
+const addFileAndLink = document.querySelector(".addFileAndLink");
+
+addFileAndLink.addEventListener("click", (e) => {
+    if (e.target.classList.contains("remove-button")) {
+        e.target.closest(".attach-wrap").remove();
+    }
+});
+
+// 공고 첨부하기
+const attachRecruitBtn = document.querySelector(".attachRecruitBtn");
+
+attachRecruitBtn.addEventListener("click", (e) => {
+    // 체크된 공고들 가져오기
+    const checkedItems = document.querySelectorAll(
+        '#recentRecruit .keyword-search-item input[type="checkbox"]:checked',
+    );
+
+    if (checkedItems.length === 0) {
+        alert("첨부할 공고를 선택해주세요.");
+        return;
+    }
+
+    checkedItems.forEach((checkbox) => {
+        const gno = checkbox.dataset.gno;
+        const cname = checkbox.dataset.cname;
+        const title = checkbox.dataset.title;
+        const logo =
+            checkbox.dataset.logo ||
+            "//img.jobkorea.co.kr/Images/Logo/200/l/o/logo_none_200.png";
+
+        addFileAndLink.innerHTML += `
+            <div class="attach-wrap" data-gno="${gno}">
+                <a href="/Recruit/GI_Read/${gno}" target="_blank" class="attach-box">
+                    <span class="thumb-img-area">
+                        <img src="${logo}" alt="${cname}" 
+                             onerror="this.src='//img.jobkorea.co.kr/Images/Logo/200/l/o/logo_none_200.png'">
+                    </span>
+                    <div class="corp-info-area qnaSpA">
+                        <p class="corp-name">${cname}</p>
+                        <p class="content">${title}</p>
+                    </div>
+                </a>
+                <button type="button" class="remove-button qnaSpB">삭제하기</button>
+            </div>
+        `;
+
+        // 체크 해제
+        checkbox.checked = false;
+    });
+
+    // 레이어 닫기
+    ExperienceAnnouncementClick.classList.remove("on");
+    ExperienceAnnouncementLayer.classList.remove("open");
+    handsOnExperience.style.display =
+        handsOnExperience.style.display === "block" ? "none" : "block";
+    applyAttachRecruitBtn.classList.remove("on");
+    applyAttachRecruitBtn.textContent = "첨부하기";
+});
