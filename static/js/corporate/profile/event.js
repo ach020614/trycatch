@@ -283,9 +283,6 @@ const executeDaumPostcode = () => {
 //     }
 // }
 
-// 복리후생 기본값 설정
-function setWelfareInitialValue() {}
-
 // 이벤트
 // input
 companyBasicinputs.forEach((input) => {
